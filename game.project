@@ -1,0 +1,6 @@
+[project]
+title = setv
+version = 1.0.0
+
+[library]
+include_dirs = setv
