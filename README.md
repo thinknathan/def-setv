@@ -4,7 +4,47 @@ A Defold native extension that combines the math functions that avoid allocation
 
 All functions take an output vector (or quaternion, or matrix) as their first argument, and change the vector's values in place instead of allocating a new vector.
 
-## Examples
+## Provided Functions
+
+- setv.get_position
+- setv.get_world_position
+- setv.get_rotation
+- setv.get_world_rotation
+- setv.get_scale
+- setv.get_world_scale
+- setv.get_world_transform
+- setv.add
+- setv.sub
+- setv.mul
+- setv.div
+- setv.cross
+- setv.mul_per_elem
+- setv.normalize
+- setv.rotate
+- setv.vector
+- setv.quat_conj
+- setv.quat_axis_angle
+- setv.quat_basis
+- setv.quat_from_to
+- setv.quat_rotation_x
+- setv.quat_rotation_y
+- setv.quat_rotation_z
+- setv.quat
+- setv.lerp
+- setv.slerp
+- setv.matrix_axis_angle
+- setv.matrix_from_quat
+- setv.matrix_frustum
+- setv.matrix_inv
+- setv.matrix_look_at
+- setv.matrix4_orthographic
+- setv.matrix_ortho_inv
+- setv.matrix4_perspective
+- setv.matrix_rotation_x
+- setv.matrix_rotation_y
+- setv.matrix_rotation_z
+- setv.matrix_translation
+- setv.matrix
 
 ## Installation
 
