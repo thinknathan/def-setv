@@ -1,0 +1,10 @@
+.git
+.gitattributes
+.gitignore
+.prettierignore
+LICENSE
+node_modules
+yarn.lock
+*.cpp
+*.script_api
+*.manifest
