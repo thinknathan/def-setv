@@ -5,7 +5,7 @@
     - name: get_rotation
       type: function
       desc: "Retrieves the local rotation of a game object instance."
-      - parameters:
+      parameters:
         - name: q_in_place
           type: quaternion
         - name: go
@@ -14,7 +14,7 @@
     - name: get_world_rotation
       type: function
       desc: "Retrieves the world rotation of a game object instance."
-      - parameters:
+      parameters:
         - name: q_in_place
           type: quaternion
         - name: go
@@ -23,7 +23,7 @@
     - name: get_position
       type: function
       desc: "Retrieves the local position of a game object instance."
-      - parameters:
+      parameters:
         - name: v_in_place
           type: vector3
         - name: go
@@ -32,7 +32,7 @@
     - name: get_world_position
       type: function
       desc: "Retrieves the world position of a game object instance."
-      - parameters:
+      parameters:
         - name: v_in_place
           type: vector3
         - name: go
@@ -41,7 +41,7 @@
     - name: get_scale
       type: function
       desc: "Retrieves the local scale of a game object instance."
-      - parameters:
+      parameters:
         - name: v_in_place
           type: vector3
         - name: go
@@ -50,7 +50,7 @@
     - name: get_world_scale
       type: function
       desc: "Retrieves the world scale of a game object instance."
-      - parameters:
+      parameters:
         - name: v_in_place
           type: vector3
         - name: go
@@ -59,7 +59,7 @@
     - name: get_world_transform
       type: function
       desc: "Retrieves the world transform of a game object instance."
-      - parameters:
+      parameters:
         - name: m_in_place
           type: matrix4
         - name: go
