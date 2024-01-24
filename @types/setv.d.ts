@@ -11,29 +11,7 @@ declare namespace setv {
 	//
 	// Game Object Look-up
 	//
-	type GameObject = unknown;
-
-	/**
-	 * Retrieves the local rotation of a game object instance.
-	 *
-	 * @param qChangeInPlace - quaternion output
-	 * @param go - game object instance
-	 */
-	export function get_rotation(
-		qChangeInPlace: vmath.quaternion,
-		go: GameObject,
-	): void;
-
-	/**
-	 * Retrieves the world rotation of a game object instance.
-	 *
-	 * @param qChangeInPlace - quaternion output
-	 * @param go - game object instance
-	 */
-	export function get_world_rotation(
-		qChangeInPlace: vmath.quaternion,
-		go: GameObject,
-	): void;
+	type GameObject = NonNullable<unknown>;
 
 	/**
 	 * Retrieves the local position of a game object instance.
@@ -54,6 +32,28 @@ declare namespace setv {
 	 */
 	export function get_world_position(
 		vChangeInPlace: vmath.vector3,
+		go: GameObject,
+	): void;
+
+	/**
+	 * Retrieves the local rotation of a game object instance.
+	 *
+	 * @param qChangeInPlace - quaternion output
+	 * @param go - game object instance
+	 */
+	export function get_rotation(
+		qChangeInPlace: vmath.quaternion,
+		go: GameObject,
+	): void;
+
+	/**
+	 * Retrieves the world rotation of a game object instance.
+	 *
+	 * @param qChangeInPlace - quaternion output
+	 * @param go - game object instance
+	 */
+	export function get_world_rotation(
+		qChangeInPlace: vmath.quaternion,
 		go: GameObject,
 	): void;
 
@@ -440,25 +440,6 @@ declare namespace setv {
 	//
 
 	/**
-	 * The resulting identity matrix describes a transform with
-	 * no translation or rotation.
-	 * @param mChangeInPlace  matrix4 output
-	 */
-	export function matrix(mChangeInPlace: vmath.matrix4): void;
-
-	/**
-	 * Outputs matrix with all components set to the
-	 * corresponding values from the supplied matrix. I.e.
-	 * the function creates a copy of the given matrix.
-	 * @param mChangeInPlace  matrix4 output
-	 * @param m1  existing matrix
-	 */
-	export function matrix(
-		mChangeInPlace: vmath.matrix4,
-		m1: vmath.matrix4,
-	): void;
-
-	/**
 	 * The resulting matrix describes a rotation around the axis by the specified angle.
 	 * @param mChangeInPlace  matrix4 output
 	 * @param v  axis
@@ -545,7 +526,7 @@ declare namespace setv {
 	 * @param near  coordinate for near clipping plane
 	 * @param far  coordinate for far clipping plane
 	 */
-	export function matrix4_orthographic(
+	export function matrix_orthographic(
 		mChangeInPlace: vmath.matrix4,
 		left: number,
 		right: number,
@@ -578,7 +559,7 @@ declare namespace setv {
 	 * @param near  coordinate for near clipping plane
 	 * @param far  coordinate for far clipping plane
 	 */
-	export function matrix4_perspective(
+	export function matrix_perspective(
 		mChangeInPlace: vmath.matrix4,
 		fov: number,
 		aspect: number,
@@ -628,5 +609,24 @@ declare namespace setv {
 	export function matrix_translation(
 		mChangeInPlace: vmath.matrix4,
 		position: vmath.vector3 | vmath.vector4,
+	): void;
+
+	/**
+	 * The resulting identity matrix describes a transform with
+	 * no translation or rotation.
+	 * @param mChangeInPlace  matrix4 output
+	 */
+	export function matrix(mChangeInPlace: vmath.matrix4): void;
+
+	/**
+	 * Outputs matrix with all components set to the
+	 * corresponding values from the supplied matrix. I.e.
+	 * the function creates a copy of the given matrix.
+	 * @param mChangeInPlace  matrix4 output
+	 * @param m1  existing matrix
+	 */
+	export function matrix(
+		mChangeInPlace: vmath.matrix4,
+		m1: vmath.matrix4,
 	): void;
 }

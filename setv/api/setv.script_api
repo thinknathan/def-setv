@@ -2,24 +2,6 @@
   type: table
   desc: Mathematical operations for vectors, quaternions, and matrices
   members:
-    - name: get_rotation
-      type: function
-      desc: "Retrieves the local rotation of a game object instance."
-      parameters:
-        - name: q_in_place
-          type: quaternion
-        - name: go
-          type: gameobject
-
-    - name: get_world_rotation
-      type: function
-      desc: "Retrieves the world rotation of a game object instance."
-      parameters:
-        - name: q_in_place
-          type: quaternion
-        - name: go
-          type: gameobject
-
     - name: get_position
       type: function
       desc: "Retrieves the local position of a game object instance."
@@ -35,6 +17,24 @@
       parameters:
         - name: v_in_place
           type: vector3
+        - name: go
+          type: gameobject
+
+    - name: get_rotation
+      type: function
+      desc: "Retrieves the local rotation of a game object instance."
+      parameters:
+        - name: q_in_place
+          type: quaternion
+        - name: go
+          type: gameobject
+
+    - name: get_world_rotation
+      type: function
+      desc: "Retrieves the world rotation of a game object instance."
+      parameters:
+        - name: q_in_place
+          type: quaternion
         - name: go
           type: gameobject
 
@@ -145,11 +145,11 @@
       desc: "Rotate a vector by a quaternion."
       parameters:
         - name: v_in_place
-          type: [vector3, vector4]
+          type: vector3
         - name: q
           type: quaternion
         - name: v1
-          type: [vector3, vector4]
+          type: vector3
 
     - name: vector
       type: function
@@ -262,15 +262,6 @@
         - name: v2
           type: [vector3, vector4, quaternion]
 
-    - name: matrix
-      type: function
-      desc: "Set the value of a matrix to the identity matrix or copy another matrix."
-      parameters:
-        - name: m_in_place
-          type: matrix4
-        - name: m1
-          type: matrix4
-
     - name: matrix_axis_angle
       type: function
       desc: "Set the value of a matrix for rotation around an axis by an angle."
@@ -319,18 +310,63 @@
         - name: m1
           type: matrix4
 
-    - name: matrix_mul
+    - name: matrix_look_at
       type: function
-      desc: "Multiply two matrices."
+      desc: "Set the value of a matrix from supplied look-at parameters."
+      parameters:
+        - name: m_in_place
+          type: matrix4
+        - name: eye
+          type: vector3
+        - name: look_at
+          type: vector3
+        - name: up
+          type: vector3
+
+    - name: matrix_orthographic
+      type: function
+      desc: "Set the value of an orthographic projection matrix."
+      parameters:
+        - name: m_in_place
+          type: matrix4
+        - name: left
+          type: number
+        - name: right
+          type: number
+        - name: bottom
+          type: number
+        - name: top
+          type: number
+        - name: near
+          type: number
+        - name: far
+          type: number
+
+    - name: matrix_ortho_inv
+      type: function
+      desc: "The resulting matrix is the inverse of the supplied matrix."
       parameters:
         - name: m_in_place
           type: matrix4
         - name: m1
           type: matrix4
-        - name: m2
-          type: matrix4
 
-    - name: matrix_rotate_x
+    - name: matrix_perspective
+      type: function
+      desc: "Set the value of a perspective projection matrix."
+      parameters:
+        - name: m_in_place
+          type: matrix4
+        - name: fov
+          type: number
+        - name: aspect
+          type: number
+        - name: near
+          type: number
+        - name: far
+          type: number
+
+    - name: matrix_rotation_x
       type: function
       desc: "Set the value of a matrix for rotation around the x-axis."
       parameters:
@@ -339,7 +375,7 @@
         - name: angle
           type: number
 
-    - name: matrix_rotate_y
+    - name: matrix_rotation_y
       type: function
       desc: "Set the value of a matrix for rotation around the y-axis."
       parameters:
@@ -348,7 +384,7 @@
         - name: angle
           type: number
 
-    - name: matrix_rotate_z
+    - name: matrix_rotation_z
       type: function
       desc: "Set the value of a matrix for rotation around the z-axis."
       parameters:
@@ -365,3 +401,12 @@
           type: matrix4
         - name: position
           type: [vector3, vector4]
+
+    - name: matrix
+      type: function
+      desc: "Set the value of a matrix to the identity matrix or copy another matrix."
+      parameters:
+        - name: m_in_place
+          type: matrix4
+        - name: m1
+          type: matrix4
