@@ -21,7 +21,6 @@
 
 #define LIB_NAME "setv"
 #define MODULE_NAME "setv"
-#define DLIB_LOG_DOMAIN "setv"
 
 #include <dmsdk/sdk.h>
 
