@@ -38,9 +38,9 @@ All functions take an output vector (or quaternion, or matrix) as their first ar
 - setv.matrix_frustum
 - setv.matrix_inv
 - setv.matrix_look_at
-- setv.matrix4_orthographic
+- setv.matrix_orthographic
 - setv.matrix_ortho_inv
-- setv.matrix4_perspective
+- setv.matrix_perspective
 - setv.matrix_rotation_x
 - setv.matrix_rotation_y
 - setv.matrix_rotation_z
