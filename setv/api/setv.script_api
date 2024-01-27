@@ -56,15 +56,6 @@
         - name: go
           type: gameobject
 
-    - name: get_world_transform
-      type: function
-      desc: "Retrieves the world transform of a game object instance."
-      parameters:
-        - name: m_in_place
-          type: matrix4
-        - name: go
-          type: gameobject
-
     - name: add
       type: function
       desc: "Add one vector to another."

@@ -101,16 +101,6 @@ static int setv_get_world_scale(lua_State* L)
 	return 0;
 }
 
-static int setv_get_world_transform(lua_State* L)
-{
-	dmGameObject::HInstance instance = dmScript::CheckGOInstance(L, 2);
-	dmVMath::Matrix4* out            = dmScript::CheckMatrix4(L, 1);
-
-	*out = dmGameObject::GetWorldTransform(instance);
-
-	return 0;
-}
-
 //* Arithmetic
 //* ----------------------------------------------------------------------------
 
@@ -646,7 +636,6 @@ static const luaL_reg setvModule_methods[] =
 	{"get_world_rotation", setv_get_world_rotation},
 	{"get_scale", setv_get_scale},
 	{"get_world_scale", setv_get_world_scale},
-	{"get_world_transform", setv_get_world_transform},
 	//* Arithmetic
 	{"add", setv_add},
 	{"sub", setv_sub},

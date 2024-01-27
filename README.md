@@ -14,7 +14,6 @@ All functions take an output vector (or quaternion, or matrix) as their first ar
 - setv.get_world_rotation
 - setv.get_scale
 - setv.get_world_scale
-- setv.get_world_transform
 - setv.add
 - setv.sub
 - setv.mul

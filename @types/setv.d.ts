@@ -79,17 +79,6 @@ declare namespace setv {
 		go: GameObject,
 	): void;
 
-	/**
-	 * Retrieves the world transform of a game object instance.
-	 *
-	 * @param mChangeInPlace - matrix output
-	 * @param go - game object instance
-	 */
-	export function get_world_transform(
-		mChangeInPlace: vmath.matrix4,
-		go: GameObject,
-	): void;
-
 	//
 	// Arithmetic
 	//
