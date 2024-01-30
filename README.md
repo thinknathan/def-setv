@@ -1,3 +1,5 @@
+<img src="_docs/def-setv.png" alt="Def-Setv">
+
 # SetV for Defold
 
 [![Build with bob](https://github.com/thinknathan/def-setv/actions/workflows/bob.yml/badge.svg)](https://github.com/thinknathan/def-setv/actions/workflows/bob.yml)
