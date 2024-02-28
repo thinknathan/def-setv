@@ -56,6 +56,28 @@
         - name: go
           type: gameobject
 
+    - name: world_to_local_position
+      type: function
+      desc: "Convert position to game object's coordinate space."
+      parameters:
+        - name: v_in_place
+          type: vector3
+        - name: go
+          type: gameobject
+        - name: world_position
+          type: vector3
+
+    - name: world_to_local_transform
+      type: function
+      desc: "Convert transformation matrix to game object's coordinate space."
+      parameters:
+        - name: m_in_place
+          type: matrix4
+        - name: go
+          type: gameobject
+        - name: world_transform
+          type: matrix4
+
     - name: add
       type: function
       desc: "Add one vector to another."

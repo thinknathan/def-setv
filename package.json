@@ -1,16 +1,17 @@
 {
 	"name": "@types/def-setv",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Types for Def-SetV, a Defold native extension.",
 	"license": "MIT",
 	"files": [
 		"**/*.d.ts"
 	],
+	"types": "./@types/setv-1.1.0.d.ts",
+	"main": "./@types/setv-1.1.0",
 	"scripts": {
 		"check": "tsc --noEmit",
 		"prettier": "prettier \"./**\" --write"
 	},
-	"types": "./@types/setv.d.ts",
 	"devDependencies": {
 		"@ts-defold/types": "^1.2.21",
 		"@typescript-to-lua/language-extensions": "^1.0.0",

@@ -101,6 +101,38 @@ static int setv_get_world_scale(lua_State* L)
 	return 0;
 }
 
+static int setv_world_to_local_position(lua_State* L)
+{
+	dmGameObject::HInstance instance = dmScript::CheckGOInstance(L, 3);
+	dmVMath::Vector3* world_position = dmScript::CheckVector3(L, 2);
+
+	dmVMath::Matrix4 go_transform = dmGameObject::GetWorldMatrix(instance);
+	dmVMath::Matrix4 world_transform = dmVMath::Matrix4::identity();
+	world_transform.setTranslation(*world_position);
+	dmVMath::Matrix4 result_transform = world_transform * go_transform;
+
+	dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
+	// result_transform.getTranslation();
+	out->setX(result_transform.getX());
+	out->setY(result_transform.getY());
+	out->setZ(result_transform.getZ());
+
+	return 0;
+}
+
+static int setv_world_to_local_transform(lua_State* L)
+{
+	dmGameObject::HInstance instance = dmScript::CheckGOInstance(L, 2);
+	dmVMath::Matrix4* world_transform = dmScript::CheckMatrix4(L, 3);
+
+	const dmVMath::Matrix4& go_transform = dmGameObject::GetWorldMatrix(instance);
+
+	dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
+	*out                  = *world_transform * go_transform;
+
+	return 0;
+}
+
 //* Arithmetic
 //* ----------------------------------------------------------------------------
 
@@ -636,6 +668,8 @@ static const luaL_reg setvModule_methods[] =
 	{"get_world_rotation", setv_get_world_rotation},
 	{"get_scale", setv_get_scale},
 	{"get_world_scale", setv_get_world_scale},
+	{"world_to_local_position", setv_world_to_local_position},
+	{"world_to_local_transform", setv_world_to_local_transform},
 	//* Arithmetic
 	{"add", setv_add},
 	{"sub", setv_sub},
