@@ -112,10 +112,11 @@ static int setv_world_to_local_position(lua_State* L)
 	dmVMath::Matrix4 result_transform = world_transform * go_transform;
 
 	dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
-	// result_transform.getTranslation();
-	out->setX(result_transform.getX());
-	out->setY(result_transform.getY());
-	out->setZ(result_transform.getZ());
+	const dmVMath::Vector3& result_translation = result_transform.getTranslation();
+
+	out->setX(result_translation.getX());
+	out->setY(result_translation.getY());
+	out->setZ(result_translation.getZ());
 
 	return 0;
 }
