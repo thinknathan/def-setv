@@ -2,7 +2,7 @@
 /// <reference types="@ts-defold/types" />
 
 /**
- * Defold math extention library that avoids allocations
+ * Defold math extension library that avoids allocations
  * @license MIT
  * @author Indiesoft LLC, Justin Walsh
  * @link https://github.com/thinknathan/def-setv/
