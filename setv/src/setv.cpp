@@ -141,16 +141,16 @@ static int setv_add(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
-			Vectormath::Aos::Vector3 *lhs = dmScript::CheckVector3(L, 2);
-			Vectormath::Aos::Vector3 *rhs = dmScript::CheckVector3(L, 3);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
+			dmVMath::Vector3* lhs = dmScript::CheckVector3(L, 2);
+			dmVMath::Vector3* rhs = dmScript::CheckVector3(L, 3);
 			*out = *lhs + *rhs;
 	}
 	else if (dmScript::IsVector4(L, 1))
 	{
-			Vectormath::Aos::Vector4 *out = dmScript::CheckVector4(L, 1);
-			Vectormath::Aos::Vector4 *lhs = dmScript::CheckVector4(L, 2);
-			Vectormath::Aos::Vector4 *rhs = dmScript::CheckVector4(L, 3);
+			dmVMath::Vector4* out = dmScript::CheckVector4(L, 1);
+			dmVMath::Vector4* lhs = dmScript::CheckVector4(L, 2);
+			dmVMath::Vector4* rhs = dmScript::CheckVector4(L, 3);
 			*out = *lhs + *rhs;
 	}
 
@@ -161,16 +161,16 @@ static int setv_sub(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
-			Vectormath::Aos::Vector3 *lhs = dmScript::CheckVector3(L, 2);
-			Vectormath::Aos::Vector3 *rhs = dmScript::CheckVector3(L, 3);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
+			dmVMath::Vector3* lhs = dmScript::CheckVector3(L, 2);
+			dmVMath::Vector3* rhs = dmScript::CheckVector3(L, 3);
 			*out = *lhs - *rhs;
 	}
 	else if (dmScript::IsVector4(L, 1))
 	{
-			Vectormath::Aos::Vector4 *out = dmScript::CheckVector4(L, 1);
-			Vectormath::Aos::Vector4 *lhs = dmScript::CheckVector4(L, 2);
-			Vectormath::Aos::Vector4 *rhs = dmScript::CheckVector4(L, 3);
+			dmVMath::Vector4* out = dmScript::CheckVector4(L, 1);
+			dmVMath::Vector4* lhs = dmScript::CheckVector4(L, 2);
+			dmVMath::Vector4* rhs = dmScript::CheckVector4(L, 3);
 			*out = *lhs - *rhs;
 	}
 
@@ -181,15 +181,15 @@ static int setv_mul(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
-			Vectormath::Aos::Vector3 *lhs = dmScript::CheckVector3(L, 2);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
+			dmVMath::Vector3* lhs = dmScript::CheckVector3(L, 2);
 			float rhs = (float) luaL_checknumber(L, 3);
 			*out = *lhs * rhs;
 	}
 	else if (dmScript::IsVector4(L, 1))
 	{
-			Vectormath::Aos::Vector4 *out = dmScript::CheckVector4(L, 1);
-			Vectormath::Aos::Vector4 *lhs = dmScript::CheckVector4(L, 2);
+			dmVMath::Vector4* out = dmScript::CheckVector4(L, 1);
+			dmVMath::Vector4* lhs = dmScript::CheckVector4(L, 2);
 			float rhs = (float) luaL_checknumber(L, 3);
 			*out = *lhs * rhs;
 	}
@@ -201,15 +201,15 @@ static int setv_div(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
-			Vectormath::Aos::Vector3 *lhs = dmScript::CheckVector3(L, 2);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
+			dmVMath::Vector3* lhs = dmScript::CheckVector3(L, 2);
 			float rhs = (float) luaL_checknumber(L, 3);
 			*out = *lhs / rhs;
 	}
 	else if (dmScript::IsVector4(L, 1))
 	{
-			Vectormath::Aos::Vector4 *out = dmScript::CheckVector4(L, 1);
-			Vectormath::Aos::Vector4 *lhs = dmScript::CheckVector4(L, 2);
+			dmVMath::Vector4* out = dmScript::CheckVector4(L, 1);
+			dmVMath::Vector4* lhs = dmScript::CheckVector4(L, 2);
 			float rhs = (float) luaL_checknumber(L, 3);
 			*out = *lhs / rhs;
 	}
@@ -224,10 +224,10 @@ static int setv_cross(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
-			Vectormath::Aos::Vector3 *lhs = dmScript::CheckVector3(L, 2);
-			Vectormath::Aos::Vector3 *rhs = dmScript::CheckVector3(L, 3);
-			*out = Vectormath::Aos::cross(*lhs, *rhs);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
+			dmVMath::Vector3* lhs = dmScript::CheckVector3(L, 2);
+			dmVMath::Vector3* rhs = dmScript::CheckVector3(L, 3);
+			*out = dmVMath::cross(*lhs, *rhs);
 	}
 	
 	return 0;
@@ -237,17 +237,17 @@ static int setv_mul_per_elem(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
-			Vectormath::Aos::Vector3 *lhs = dmScript::CheckVector3(L, 2);
-			Vectormath::Aos::Vector3 *rhs = dmScript::CheckVector3(L, 3);
-			*out = Vectormath::Aos::mulPerElem(*lhs, *rhs);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
+			dmVMath::Vector3* lhs = dmScript::CheckVector3(L, 2);
+			dmVMath::Vector3* rhs = dmScript::CheckVector3(L, 3);
+			*out = dmVMath::mulPerElem(*lhs, *rhs);
 	}
 	else if (dmScript::IsVector4(L, 1))
 	{
-			Vectormath::Aos::Vector4 *out = dmScript::CheckVector4(L, 1);
-			Vectormath::Aos::Vector4 *lhs = dmScript::CheckVector4(L, 2);
-			Vectormath::Aos::Vector4 *rhs = dmScript::CheckVector4(L, 3);
-			*out = Vectormath::Aos::mulPerElem(*lhs, *rhs);
+			dmVMath::Vector4* out = dmScript::CheckVector4(L, 1);
+			dmVMath::Vector4* lhs = dmScript::CheckVector4(L, 2);
+			dmVMath::Vector4* rhs = dmScript::CheckVector4(L, 3);
+			*out = dmVMath::mulPerElem(*lhs, *rhs);
 	}
 	
 	return 0;
@@ -257,15 +257,15 @@ static int setv_normalize(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
-			Vectormath::Aos::Vector3 *a = dmScript::CheckVector3(L, 2);
-			*out = Vectormath::Aos::normalize(*a);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
+			dmVMath::Vector3* a = dmScript::CheckVector3(L, 2);
+			*out = dmVMath::normalize(*a);
 	}
 	else if (dmScript::IsVector4(L, 1))
 	{
-			Vectormath::Aos::Vector4 *out = dmScript::CheckVector4(L, 1);
-			Vectormath::Aos::Vector4 *a = dmScript::CheckVector4(L, 2);
-			*out = Vectormath::Aos::normalize(*a);
+			dmVMath::Vector4* out = dmScript::CheckVector4(L, 1);
+			dmVMath::Vector4* a = dmScript::CheckVector4(L, 2);
+			*out = dmVMath::normalize(*a);
 	}
 
 	return 0;
@@ -275,10 +275,10 @@ static int setv_rotate(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
-			Vectormath::Aos::Quat *lhs = dmScript::CheckQuat(L, 2);
-			Vectormath::Aos::Vector3 *rhs = dmScript::CheckVector3(L, 3);
-			*out = Vectormath::Aos::rotate(*lhs, *rhs);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
+			dmVMath::Quat* lhs = dmScript::CheckQuat(L, 2);
+			dmVMath::Vector3* rhs = dmScript::CheckVector3(L, 3);
+			*out = dmVMath::rotate(*lhs, *rhs);
 	}
 
 	return 0;
@@ -288,13 +288,13 @@ static int setv_vector(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
-			*out = Vectormath::Aos::Vector3(0, 0, 0);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
+			*out = dmVMath::Vector3(0, 0, 0);
 	}
 	else if (dmScript::IsVector4(L, 1))
 	{
-			Vectormath::Aos::Vector4 *out = dmScript::CheckVector4(L, 1);
-			*out = Vectormath::Aos::Vector4(0, 0, 0, 1);
+			dmVMath::Vector4* out = dmScript::CheckVector4(L, 1);
+			*out = dmVMath::Vector4(0, 0, 0, 1);
 	}
 
 	return 0;
@@ -307,9 +307,9 @@ static int setv_quat_conj(lua_State* L)
 {
 	if (dmScript::IsQuat(L, 1))
 	{
-			Vectormath::Aos::Quat *out = dmScript::CheckQuat(L, 1);
-			Vectormath::Aos::Quat *a = dmScript::CheckQuat(L, 2);
-			*out = Vectormath::Aos::conj(*a);
+			dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
+			dmVMath::Quat* a = dmScript::CheckQuat(L, 2);
+			*out = dmVMath::conj(*a);
 	}
 
 	return 0;
@@ -319,10 +319,10 @@ static int setv_quat_axis_angle(lua_State* L)
 {
 	if (dmScript::IsQuat(L, 1))
 	{
-			Vectormath::Aos::Quat *out = dmScript::CheckQuat(L, 1);
-			Vectormath::Aos::Vector3 *axis = dmScript::CheckVector3(L, 2);
+			dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
+			dmVMath::Vector3* axis = dmScript::CheckVector3(L, 2);
 			float angle = (float) luaL_checknumber(L, 3);
-			*out = Vectormath::Aos::Quat(*axis, angle);
+			*out = dmVMath::Quat(*axis, angle);
 	}
 
 	return 0;
@@ -332,15 +332,15 @@ static int setv_quat_basis(lua_State* L)
 {
 	if (dmScript::IsQuat(L, 1))
 	{
-			Vectormath::Aos::Quat *out = dmScript::CheckQuat(L, 1);
-			Vectormath::Aos::Vector3 *x = dmScript::CheckVector3(L, 2);
-			Vectormath::Aos::Vector3 *y = dmScript::CheckVector3(L, 3);
-			Vectormath::Aos::Vector3 *z = dmScript::CheckVector3(L, 4);
-			Vectormath::Aos::Matrix3 m;
+			dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
+			dmVMath::Vector3* x = dmScript::CheckVector3(L, 2);
+			dmVMath::Vector3* y = dmScript::CheckVector3(L, 3);
+			dmVMath::Vector3* z = dmScript::CheckVector3(L, 4);
+			dmVMath::Matrix3 m;
 			m.setCol0(*x);
 			m.setCol1(*y);
 			m.setCol2(*z);
-			*out = Vectormath::Aos::Quat(m);
+			*out = dmVMath::Quat(m);
 	}
 
 	return 0;
@@ -350,10 +350,10 @@ static int setv_quat_from_to(lua_State* L)
 {
 	if (dmScript::IsQuat(L, 1))
 	{
-			Vectormath::Aos::Quat *out = dmScript::CheckQuat(L, 1);
-			Vectormath::Aos::Vector3 *from = dmScript::CheckVector3(L, 2);
-			Vectormath::Aos::Vector3 *to = dmScript::CheckVector3(L, 3);
-			*out = Vectormath::Aos::Quat::rotation(*from, *to);
+			dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
+			dmVMath::Vector3* from = dmScript::CheckVector3(L, 2);
+			dmVMath::Vector3* to = dmScript::CheckVector3(L, 3);
+			*out = dmVMath::Quat::rotation(*from, *to);
 	}
 	
 	return 0;
@@ -363,9 +363,9 @@ static int setv_quat_rotation_x(lua_State* L)
 {
 	if (dmScript::IsQuat(L, 1))
 	{
-			Vectormath::Aos::Quat *out = dmScript::CheckQuat(L, 1);
+			dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
 			float angle = (float) luaL_checknumber(L, 2);
-			*out = Vectormath::Aos::Quat::rotationX(angle);
+			*out = dmVMath::Quat::rotationX(angle);
 	}
 
 	return 0;
@@ -375,9 +375,9 @@ static int setv_quat_rotation_y(lua_State* L)
 {
 	if (dmScript::IsQuat(L, 1))
 	{
-			Vectormath::Aos::Quat *out = dmScript::CheckQuat(L, 1);
+			dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
 			float angle = (float) luaL_checknumber(L, 2);
-			*out = Vectormath::Aos::Quat::rotationY(angle);
+			*out = dmVMath::Quat::rotationY(angle);
 	}
 
 	return 0;
@@ -387,9 +387,9 @@ static int setv_quat_rotation_z(lua_State* L)
 {
 	if (dmScript::IsQuat(L, 1))
 	{
-			Vectormath::Aos::Quat *out = dmScript::CheckQuat(L, 1);
+			dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
 			float angle = (float) luaL_checknumber(L, 2);
-			*out = Vectormath::Aos::Quat::rotationZ(angle);
+			*out = dmVMath::Quat::rotationZ(angle);
 	}
 
 	return 0;
@@ -399,8 +399,8 @@ static int setv_quat(lua_State* L)
 {
 	if (dmScript::IsQuat(L, 1))
 	{
-			Vectormath::Aos::Quat *out = dmScript::CheckQuat(L, 1);
-			*out = Vectormath::Aos::Quat::identity();
+			dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
+			*out = dmVMath::Quat::identity();
 	}
 
 	return 0;
@@ -413,27 +413,27 @@ static int setv_lerp(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
 			float t = (float) luaL_checknumber(L, 2);
-			Vectormath::Aos::Vector3 *lhs = dmScript::CheckVector3(L, 3);
-			Vectormath::Aos::Vector3 *rhs = dmScript::CheckVector3(L, 4);
-			*out = Vectormath::Aos::lerp(t, *lhs, *rhs);
+			dmVMath::Vector3* lhs = dmScript::CheckVector3(L, 3);
+			dmVMath::Vector3* rhs = dmScript::CheckVector3(L, 4);
+			*out = dmVMath::lerp(t, *lhs, *rhs);
 	}
 	else if (dmScript::IsVector4(L, 1))
 	{
-			Vectormath::Aos::Vector4 *out = dmScript::CheckVector4(L, 1);
+			dmVMath::Vector4* out = dmScript::CheckVector4(L, 1);
 			float t = (float) luaL_checknumber(L, 2);
-			Vectormath::Aos::Vector4 *lhs = dmScript::CheckVector4(L, 3);
-			Vectormath::Aos::Vector4 *rhs = dmScript::CheckVector4(L, 4);
-			*out = Vectormath::Aos::lerp(t, *lhs, *rhs);
+			dmVMath::Vector4* lhs = dmScript::CheckVector4(L, 3);
+			dmVMath::Vector4* rhs = dmScript::CheckVector4(L, 4);
+			*out = dmVMath::lerp(t, *lhs, *rhs);
 	}
 	else if (dmScript::IsQuat(L, 1))
 	{
-			Vectormath::Aos::Quat *out = dmScript::CheckQuat(L, 1);
+			dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
 			float t = (float) luaL_checknumber(L, 2);
-			Vectormath::Aos::Quat *lhs = dmScript::CheckQuat(L, 3);
-			Vectormath::Aos::Quat *rhs = dmScript::CheckQuat(L, 4);
-			*out = Vectormath::Aos::slerp(t, *lhs, *rhs);
+			dmVMath::Quat* lhs = dmScript::CheckQuat(L, 3);
+			dmVMath::Quat* rhs = dmScript::CheckQuat(L, 4);
+			*out = dmVMath::slerp(t, *lhs, *rhs);
 	}
 	
 	return 0;
@@ -443,27 +443,27 @@ static int setv_slerp(lua_State* L)
 {
 	if (dmScript::IsVector3(L, 1))
 	{
-			Vectormath::Aos::Vector3 *out = dmScript::CheckVector3(L, 1);
+			dmVMath::Vector3* out = dmScript::CheckVector3(L, 1);
 			float t = (float) luaL_checknumber(L, 2);
-			Vectormath::Aos::Vector3 *lhs = dmScript::CheckVector3(L, 3);
-			Vectormath::Aos::Vector3 *rhs = dmScript::CheckVector3(L, 4);
-			*out = Vectormath::Aos::slerp(t, *lhs, *rhs);
+			dmVMath::Vector3* lhs = dmScript::CheckVector3(L, 3);
+			dmVMath::Vector3* rhs = dmScript::CheckVector3(L, 4);
+			*out = dmVMath::slerp(t, *lhs, *rhs);
 	}
 	else if (dmScript::IsVector4(L, 1))
 	{
-			Vectormath::Aos::Vector4 *out = dmScript::CheckVector4(L, 1);
+			dmVMath::Vector4* out = dmScript::CheckVector4(L, 1);
 			float t = (float) luaL_checknumber(L, 2);
-			Vectormath::Aos::Vector4 *lhs = dmScript::CheckVector4(L, 3);
-			Vectormath::Aos::Vector4 *rhs = dmScript::CheckVector4(L, 4);
-			*out = Vectormath::Aos::slerp(t, *lhs, *rhs);
+			dmVMath::Vector4* lhs = dmScript::CheckVector4(L, 3);
+			dmVMath::Vector4* rhs = dmScript::CheckVector4(L, 4);
+			*out = dmVMath::slerp(t, *lhs, *rhs);
 	}
 	else if (dmScript::IsQuat(L, 1))
 	{
-			Vectormath::Aos::Quat *out = dmScript::CheckQuat(L, 1);
+			dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
 			float t = (float) luaL_checknumber(L, 2);
-			Vectormath::Aos::Quat *lhs = dmScript::CheckQuat(L, 3);
-			Vectormath::Aos::Quat *rhs = dmScript::CheckQuat(L, 4);
-			*out = Vectormath::Aos::slerp(t, *lhs, *rhs);
+			dmVMath::Quat* lhs = dmScript::CheckQuat(L, 3);
+			dmVMath::Quat* rhs = dmScript::CheckQuat(L, 4);
+			*out = dmVMath::slerp(t, *lhs, *rhs);
 	}
 	
 	return 0;
@@ -476,13 +476,13 @@ static int setv_matrix(lua_State* L)
 {
 	if (lua_gettop(L) == 0 && dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
-			*out = Vectormath::Aos::Matrix4::identity();
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
+			*out = dmVMath::Matrix4::identity();
 	}
 	else if (lua_gettop(L) == 1 && dmScript::IsMatrix4(L, 1) && dmScript::IsMatrix4(L, 2))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
-			Vectormath::Aos::Matrix4 *in = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* in = dmScript::CheckMatrix4(L, 1);
 			*out = *in;
 	}
 	
@@ -493,10 +493,10 @@ static int setv_matrix_axis_angle(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
-			Vectormath::Aos::Vector3 *axis = dmScript::CheckVector3(L, 2);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Vector3* axis = dmScript::CheckVector3(L, 2);
 			float angle = (float) luaL_checknumber(L, 3);
-			*out = Vectormath::Aos::Matrix4::rotation(angle, *axis);
+			*out = dmVMath::Matrix4::rotation(angle, *axis);
 	}
 
 	return 0;
@@ -506,9 +506,9 @@ static int setv_matrix_from_quat(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
-			Vectormath::Aos::Quat *quat = dmScript::CheckQuat(L, 2);
-			*out = Vectormath::Aos::Matrix4::rotation(*quat);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Quat* quat = dmScript::CheckQuat(L, 2);
+			*out = dmVMath::Matrix4::rotation(*quat);
 	}
 
 	return 0;
@@ -518,7 +518,7 @@ static int setv_matrix_frustum(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
 			float left = (float) luaL_checknumber(L, 2);
 			float right = (float) luaL_checknumber(L, 3);
 			float bottom = (float) luaL_checknumber(L, 4);
@@ -526,7 +526,7 @@ static int setv_matrix_frustum(lua_State* L)
 			float near_z = (float) luaL_checknumber(L, 6);
 			if(near_z == 0.0f) near_z = 0.00001f;
 			float far_z = (float) luaL_checknumber(L, 7);
-			*out = Vectormath::Aos::Matrix4::frustum(left, right, bottom, top, near_z, far_z);
+			*out = dmVMath::Matrix4::frustum(left, right, bottom, top, near_z, far_z);
 	}
 
 	return 0;
@@ -536,9 +536,9 @@ static int setv_matrix_inv(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
-			Vectormath::Aos::Matrix4 *in = dmScript::CheckMatrix4(L, 2);
-			*out = Vectormath::Aos::inverse(*in);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* in = dmScript::CheckMatrix4(L, 2);
+			*out = dmVMath::inverse(*in);
 	}
 	return 0;
 }
@@ -547,11 +547,11 @@ static int setv_matrix_look_at(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
-			Vectormath::Aos::Point3 eye = Vectormath::Aos::Point3(*dmScript::CheckVector3(L, 2));
-			Vectormath::Aos::Point3 target = Vectormath::Aos::Point3(*dmScript::CheckVector3(L, 3));
-			Vectormath::Aos::Vector3 up = *dmScript::CheckVector3(L, 4);
-			*out = Vectormath::Aos::Matrix4::lookAt(eye, target, up);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Point3 eye = dmVMath::Point3(*dmScript::CheckVector3(L, 2));
+			dmVMath::Point3 target = dmVMath::Point3(*dmScript::CheckVector3(L, 3));
+			dmVMath::Vector3 up = *dmScript::CheckVector3(L, 4);
+			*out = dmVMath::Matrix4::lookAt(eye, target, up);
 	}
 
 	return 0;
@@ -561,14 +561,14 @@ static int setv_matrix_orthographic(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
 			float left = (float) luaL_checknumber(L, 2);
 			float right = (float) luaL_checknumber(L, 3);
 			float bottom = (float) luaL_checknumber(L, 4);
 			float top = (float) luaL_checknumber(L, 5);
 			float near_z = (float) luaL_checknumber(L, 6);
 			float far_z = (float) luaL_checknumber(L, 7);
-			*out = Vectormath::Aos::Matrix4::orthographic(left, right, bottom, top, near_z, far_z);
+			*out = dmVMath::Matrix4::orthographic(left, right, bottom, top, near_z, far_z);
 	}
 
 	return 0;
@@ -578,9 +578,9 @@ static int setv_matrix_ortho_inv(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
-			Vectormath::Aos::Matrix4 *in = dmScript::CheckMatrix4(L, 2);
-			*out = Vectormath::Aos::orthoInverse(*in);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* in = dmScript::CheckMatrix4(L, 2);
+			*out = dmVMath::orthoInverse(*in);
 	}
 
 	return 0;
@@ -590,13 +590,13 @@ static int setv_matrix_perspective(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
 			float fov = (float) luaL_checknumber(L, 2);
 			float aspect = (float) luaL_checknumber(L, 3);
 			float near_z = (float) luaL_checknumber(L, 4);
 			float far_z = (float) luaL_checknumber(L, 5);
 			if (near_z == 0.0f) near_z = 0.00001f;
-			*out = Vectormath::Aos::Matrix4::perspective(fov, aspect, near_z, far_z);
+			*out = dmVMath::Matrix4::perspective(fov, aspect, near_z, far_z);
 	}
 
 	return 0;
@@ -606,9 +606,9 @@ static int setv_matrix_rotation_x(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
 			float angle = (float) luaL_checknumber(L, 2);
-			*out = Vectormath::Aos::Matrix4::rotationX(angle);
+			*out = dmVMath::Matrix4::rotationX(angle);
 	}
 
 	return 0;
@@ -618,9 +618,9 @@ static int setv_matrix_rotation_y(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
 			float angle = (float) luaL_checknumber(L, 2);
-			*out = Vectormath::Aos::Matrix4::rotationY(angle);
+			*out = dmVMath::Matrix4::rotationY(angle);
 	}
 
 	return 0;
@@ -630,9 +630,9 @@ static int setv_matrix_rotation_z(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
 			float angle = (float) luaL_checknumber(L, 2);
-			*out = Vectormath::Aos::Matrix4::rotationZ(angle);
+			*out = dmVMath::Matrix4::rotationZ(angle);
 	}
 
 	return 0;
@@ -642,16 +642,16 @@ static int setv_matrix_translation(lua_State* L)
 {
 	if (dmScript::IsMatrix4(L, 1))
 	{
-			Vectormath::Aos::Matrix4 *out = dmScript::CheckMatrix4(L, 1);
+			dmVMath::Matrix4* out = dmScript::CheckMatrix4(L, 1);
 			if (dmScript::IsVector3(L, 2))
 			{
-					Vectormath::Aos::Vector3 *v = dmScript::CheckVector3(L, 2);
-					*out = Vectormath::Aos::Matrix4::translation(*v);
+					dmVMath::Vector3* v = dmScript::CheckVector3(L, 2);
+					*out = dmVMath::Matrix4::translation(*v);
 			}
 			else if (dmScript::IsVector4(L, 2))
 			{
-					Vectormath::Aos::Vector4 *v = dmScript::CheckVector4(L, 2);
-					*out = Vectormath::Aos::Matrix4::translation(v->getXYZ());
+					dmVMath::Vector4* v = dmScript::CheckVector4(L, 2);
+					*out = dmVMath::Matrix4::translation(v->getXYZ());
 			}
 	}
 	return 0;
