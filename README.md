@@ -2,7 +2,7 @@
 
 # SetV for Defold
 
-[![Build with bob](https://github.com/thinknathan/def-setv/actions/workflows/bob.yml/badge.svg)](https://github.com/thinknathan/def-setv/actions/workflows/bob.yml)
+[![Build with bob](https://github.com/thinknathan/def-setv/actions/workflows/bob.yml/badge.svg)](https://github.com/thinknathan/def-setv/actions/workflows/bob.yml) ![GitHub License](https://img.shields.io/github/license/thinknathan/def-setv)
 
 A Defold native extension that combines the math functions that avoid allocations from [Justin Walsh's xmath](https://github.com/thejustinwalsh/defold-xmath) and [Indiesoft LLC's defold-scene3d](https://github.com/indiesoftby/defold-scene3d).
 
