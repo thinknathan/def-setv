@@ -406,6 +406,16 @@ static int setv_quat(lua_State* L)
 	return 0;
 }
 
+static int setv_euler_to_quat(lua_State* L)
+{
+    dmVMath::Vector3* euler = dmScript::CheckVector3(L, 1);
+
+    dmVMath::Quat* out = dmScript::CheckQuat(L, 1);
+    *out = dmVMath::Quat::rotation(*euler);
+
+    return 0;
+}
+
 //* Vector + Quat
 //* ----------------------------------------------------------------------------
 
@@ -690,6 +700,7 @@ static const luaL_reg setvModule_methods[] =
 	{"quat_rotation_x", setv_quat_rotation_x},
 	{"quat_rotation_y", setv_quat_rotation_x},
 	{"quat_rotation_z", setv_quat_rotation_x},
+	{"euler_to_quat", setv_euler_to_quat},
 	{"quat", setv_quat},
 	//* Vector + Quat
 	{"lerp", setv_lerp},
