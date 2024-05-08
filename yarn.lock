@@ -182,9 +182,9 @@
     chalk "^5.3.0"
 
 "@ts-defold/types@^1.2.21":
-  version "1.2.41"
-  resolved "https://registry.yarnpkg.com/@ts-defold/types/-/types-1.2.41.tgz#d59175092d941cda2d2c64c23587e9d9c62a9319"
-  integrity sha512-Uqiwfq2r2Fhz7ER1VgeyNzDOd4wMADCsjK50n6zS5jW0PBoUNH/rRRsXGKyCMOYF/G1R3CH0p1N/XHb5GGrkog==
+  version "1.2.45"
+  resolved "https://registry.yarnpkg.com/@ts-defold/types/-/types-1.2.45.tgz#9fc058d535522a0b2f6884468ec1eebecb767a4f"
+  integrity sha512-dvbXUhzIjyqoYA0DaI5kWMWblpwuasDCa16TN3YV9VlVmKOdr9HfN932/ToxM3gDbTYXgdXPDYmn+HJly5xx3Q==
   dependencies:
     lua-types "^2.10.1"
 
