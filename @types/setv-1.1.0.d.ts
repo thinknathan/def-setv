@@ -4,9 +4,9 @@
 declare namespace setv {
 	/**
 	 * Convert position to game object's coordinate space.
-	 * @param vChangeInPlace
-	 * @param go
-	 * @param worldPosition
+	 * @param vChangeInPlace - vector output
+	 * @param go - game object instance
+	 * @param worldPosition - world position as a vector3
 	 */
 	export function world_to_local_position(
 		vChangeInPlace: vmath.vector3,
@@ -16,9 +16,9 @@ declare namespace setv {
 
 	/**
 	 * Convert transformation matrix to game object's coordinate space.
-	 * @param mChangeInPlace
-	 * @param go
-	 * @param worldTransform
+	 * @param mChangeInPlace - matrix output
+	 * @param go - game object instance
+	 * @param worldTransform - world transform as a matrix4
 	 */
 	export function world_to_local_transform(
 		mChangeInPlace: vmath.matrix4,

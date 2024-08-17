@@ -5,7 +5,7 @@
  * Defold math extension library that avoids allocations
  * @license MIT
  * @author Indiesoft LLC, Justin Walsh
- * @link https://github.com/thinknathan/def-setv/
+ * @see {@link https://github.com/thinknathan/def-setv/|Github Source}
  */
 declare namespace setv {
 	//
