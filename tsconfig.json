@@ -7,7 +7,7 @@
 		"rootDir": "./@types",
 		"strict": true,
 		"target": "ESNext",
-		"typeRoots": [],
+		"typeRoots": []
 	},
-	"exclude": ["./node_modules/*"],
+	"exclude": ["./node_modules/*"]
 }

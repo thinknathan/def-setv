@@ -8,3 +8,8 @@ yarn.lock
 *.cpp
 *.script_api
 *.manifest
+*.project
+*.input_binding
+*.collection
+.husky
+*.png
