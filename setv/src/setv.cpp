@@ -688,8 +688,8 @@ static const luaL_reg setvModule_methods[] =
 	{"quat_basis", setv_quat_basis},
 	{"quat_from_to", setv_quat_from_to},
 	{"quat_rotation_x", setv_quat_rotation_x},
-	{"quat_rotation_y", setv_quat_rotation_x},
-	{"quat_rotation_z", setv_quat_rotation_x},
+	{"quat_rotation_y", setv_quat_rotation_y},
+	{"quat_rotation_z", setv_quat_rotation_z},
 	{"quat", setv_quat},
 	//* Vector + Quat
 	{"lerp", setv_lerp},
