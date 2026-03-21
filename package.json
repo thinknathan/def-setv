@@ -1,13 +1,13 @@
 {
 	"name": "@types/def-setv",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"description": "Types for Def-SetV, a Defold native extension.",
 	"license": "MIT",
 	"files": [
 		"**/*.d.ts"
 	],
-	"types": "./@types/setv-1.1.0.d.ts",
-	"main": "./@types/setv-1.1.0",
+	"types": "./@types/setv-1.2.0.d.ts",
+	"main": "./@types/setv-1.2.0",
 	"scripts": {
 		"check": "tsc --noEmit",
 		"prettier": "prettier \"./**\" --write"
